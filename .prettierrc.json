@@ -8,5 +8,8 @@
 	"useTabs": true,
 	"singleQuote": false,
 	"bracketSpacing": true,
-	"plugins": ["prettier-plugin-organize-imports"]
+	"plugins": [
+		"prettier-plugin-organize-imports",
+		"prettier-plugin-tailwindcss"
+	]
 }

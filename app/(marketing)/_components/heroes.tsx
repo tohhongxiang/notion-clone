@@ -14,7 +14,7 @@ export default function Heroes() {
 					<Image
 						src="/documents-dark.png"
 						fill
-						className="object-contain hidden dark:block"
+						className="hidden object-contain dark:block"
 						alt="Documents"
 					/>
 				</div>
@@ -28,7 +28,7 @@ export default function Heroes() {
 					<Image
 						src="/reading-dark.png"
 						fill
-						className="object-contain hidden dark:block"
+						className="hidden object-contain dark:block"
 						alt="Reading"
 					/>
 				</div>
