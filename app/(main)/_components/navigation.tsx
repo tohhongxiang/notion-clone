@@ -1,14 +1,21 @@
 "use client";
 
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from "@/components/ui/popover";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 import { useMutation } from "convex/react";
 import {
 	ChevronsLeft,
 	MenuIcon,
+	Plus,
 	PlusCircle,
 	Search,
 	Settings,
+	Trash,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ElementRef, useCallback, useEffect, useRef, useState } from "react";
@@ -16,6 +23,7 @@ import { toast } from "sonner";
 import { useMediaQuery } from "usehooks-ts";
 import { DocumentList } from "./document-list";
 import Item from "./item";
+import TrashBox from "./trash-box";
 import UserItem from "./user-item";
 
 export default function Navigation() {
@@ -157,6 +165,22 @@ export default function Navigation() {
 				</div>
 				<div className="mt-4">
 					<DocumentList />
+					<Item
+						onClick={handleCreate}
+						icon={Plus}
+						label="Add a page"
+					/>
+					<Popover>
+						<PopoverTrigger className="mt-4 w-full">
+							<Item label="Trash" icon={Trash} />
+						</PopoverTrigger>
+						<PopoverContent
+							className="w-72 p-0"
+							side={isMobile ? "bottom" : "right"}
+						>
+							<TrashBox />
+						</PopoverContent>
+					</Popover>
 				</div>
 				<button
 					onMouseDown={handleMouseDown}
