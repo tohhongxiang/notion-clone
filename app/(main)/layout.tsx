@@ -1,5 +1,6 @@
 "use client";
 
+import { SearchCommand } from "@/components/search-command";
 import Spinner from "@/components/spinner";
 import { useConvexAuth } from "convex/react";
 import { redirect } from "next/navigation";
@@ -27,7 +28,10 @@ export default function MainLayout({
 	return (
 		<div className="flex h-full dark:bg-[#1F1F1F]">
 			<Navigation />
-			<main className="h-full flex-1 overflow-y-auto">{children}</main>
+			<main className="h-full flex-1 overflow-y-auto">
+				<SearchCommand />
+				{children}
+			</main>
 		</div>
 	);
 }
